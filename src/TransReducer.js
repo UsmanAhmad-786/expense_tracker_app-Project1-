@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const TransactionReducer = ((state, action) => {
 console.log(state);
