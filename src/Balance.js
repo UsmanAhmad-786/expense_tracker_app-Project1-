@@ -1,5 +1,4 @@
-import React,{useContext} from 'react'
-import Incomexpense from './Incomexpense'
+import React from 'react'
 import TransContext from './TransContext'
 
 const Balance = () => {

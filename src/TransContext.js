@@ -1,5 +1,5 @@
-import React, { useReducer } from 'react';
-import TransactionReducer from './TransReducer'
+import React from 'react';
+
 
 
 const initialtransactions = [
