@@ -4,7 +4,9 @@ import TransContext from './TransContext'
 const Incomexpense = () => {
     const {transactions} = React.useContext(TransContext);
     console.log(transactions);
-
+    const transactionAmounts = transactions.map(transaction=>transaction.amount);
+   /* 
+    This is another method for doing this but this is lengthy Solution
     const getIncome = () => {
         
         let income=0;
@@ -26,12 +28,21 @@ const Incomexpense = () => {
         
         return Expense;
        
-    }
+    } */
+    const income = transactionAmounts
+    .filter(transaction => transaction > 0)
+    .reduce((acc, transaction) => (acc += transaction), 0)
+    .toFixed(2);
+
+const expense = Math.abs(transactionAmounts
+    .filter(transaction => transaction < 0)
+    .reduce((acc, transaction) => (acc += transaction), 0)
+    ).toFixed(2);
     
     return (
         <div className="incomexpense">
-          <h3 className="incomecolor">  INCOME<br/> ${ getIncome().toFixed(2)} </h3>
-           <h3 className="expensecolor"> EXPENSE<br/> ${getExpense().toFixed(2)}</h3>
+          <h3 className="incomecolor">  INCOME<br/> ${income} </h3>
+           <h3 className="expensecolor"> EXPENSE<br/> ${expense}</h3>
         </div>
     );
 
