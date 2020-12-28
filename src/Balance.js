@@ -34,7 +34,7 @@ const Balance = () => {
     } */
     
     return (<div className="balanc">
-        <h4 className="blncolor">YOUR BALANCE</h4><h2 className="blncolor"> $ {/* {(getIncome()+getExpense()).toFixed(2)} */ balance}</h2>
+        <h4 className="blncolor">YOUR BALANCE</h4><h2 className="blncolor">${/* {(getIncome()+getExpense()).toFixed(2)} */ balance}</h2>
     </div>
     );
 }
